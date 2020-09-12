@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Welcome to the PHP MVC framework
 
 This is a simple MVC framework for building web applications in PHP. It's free and [open-source](LICENSE).
@@ -126,3 +127,7 @@ Pretty URLs are enabled using web server rewrite rules. An [.htaccess](public/.h
 ---
 
 Signup for the course [here](https://davehollingworth.net/phpmvcg) and understand how this framework is built from scratch, putting it all together step by step.
+=======
+# TrackerV2.0
+Tracker V.20
+>>>>>>> e799814dbf6e6415402d611706d3f1d99a01c540
