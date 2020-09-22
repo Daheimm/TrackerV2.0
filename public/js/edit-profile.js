@@ -1,6 +1,13 @@
 let lngList = [];
 let countryList = [];
+
 $(document).ready(function () {
+
+
+    var url = new URL(document.location.href);
+    var company = url.searchParams.get("company");
+
+
     $.each(languageList, function (key, value) {
         $('#language').append('<option value="' + value + '">' + key + ": " + value + '</option>');
     });
@@ -10,18 +17,28 @@ $(document).ready(function () {
         $('#geolocation').append('<option value="' + country[value] + '">' + country[value] + '</option>');
     });
 
+    function redraw(data) {
+
+        $(data.id).append('<div class="input-group removeGeo">' +
+            '<input type="text" class="form-control disabled read" name="" value="' + data.val + '" disabled />' +
+            '<div class="input-group-append">' +
+            '<button id="addGeoButton"  class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>' +
+            '</div>' +
+            '</div>');
+    }
+
 
     $('#addGeo').click(function () {
 
-
+        console.log(countryList.indexOf($('#geolocation').find(":selected").text()));
         if (countryList.indexOf($('#geolocation').find(":selected").text()) == -1) {
             countryList.push($('#geolocation').find(":selected").text());
-            $('#selectedGeo').append('<div class="input-group removeGeo">' +
-                '<input type="text" class="form-control disabled" name="" value="' + $('#geolocation').find(":selected").text() + '" disabled />' +
-                '<div class="input-group-append">' +
-                '<button id="addGeoButton"  class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>' +
-                '</div>' +
-                '</div>');
+            data = {
+                'id': '#selectedGeo',
+                'val': $('#geolocation').find(":selected").text()
+            }
+            redraw(data)
+
         } else {
             alert("Выбранная страна уже есть в списке");
         }
@@ -29,27 +46,28 @@ $(document).ready(function () {
 
     $('#addLng').click(function () {
 
+        var lng = $('#language').find(":selected").text().split(':')[0];
 
-        if (lngList.indexOf($('#language').find(":selected").text()) == -1) {
 
-            lngList.push($('#language').find(":selected").text());
-            console.log(typeof $('#language').find(":selected").text());
-            $('#selectedLng').append('<div class="input-group removeLng">\n' +
-                '<input type="text" id="inputLng" class="form-control disabled" name="" value="' + $('#language').find(":selected").text() + '" disabled />\n' +
-                '<div class="input-group-append ">\n' +
-                '<button  class="btn btn-danger del"><i class="fas fa-trash-alt"></i></button>\n' +
-                '</div>' +
-                '</div>');
+        if (lngList.indexOf(lng) == -1) {
+
+            lngList.push(lng);
+            data = {
+                'id': '#selectedLng',
+                'val': $('#language').find(":selected").text()
+            }
+            redraw(data);
         } else {
             alert("Выбранный язык уже есть в списке");
         }
     })
 
     $('html').on('click', '.removeLng', function () {
-        //console.log($(this));
-        var lngDel = $(this).children($("input")).val();
+
+        var lngDel = $(this).children($("input")).val().split(':')[0];
         var index = lngList.indexOf(lngDel);
         lngList.splice(index, 1);
+        console.log(lngList);
         $(this).remove();
     });
 
@@ -60,5 +78,57 @@ $(document).ready(function () {
         $(this).remove();
         console.log(countryList);
     });
+
+    function sendDataEditCompnay(data) {
+        $.ajax({
+            type: "POST",
+            url: "?/editCompany/sendDataEditCompany",
+            data: data,
+            success: function (msg) {
+
+
+                //location.reload();
+            }, error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr.responseText);
+            }
+
+        });
+    }
+
+    $('#save').click(function () {
+
+        var url = new URL(document.location.href);
+        var company = url.searchParams.get("company");
+
+        data = {
+            'lng': lngList.join(),
+            'location': countryList.join(),
+            'targetPage': $('#targetPage').val(),
+            'botPage': $('#botPage').val(),
+            'staticKey': $('#staticKey').val(),
+            'company': company
+        }
+
+        sendDataEditCompnay(data);
+        document.location.href="/";
+
+
+    });
+    read();
+
+    function read() {
+        $('.readLocation').each(function (value) {
+
+            if ($(this).val()) {
+                countryList.push($(this).val());
+            }
+        })
+
+        $('.readLng').each(function (value) {
+            lngList.push($(this).val());
+
+        })
+        console.log(countryList);
+    }
 
 })

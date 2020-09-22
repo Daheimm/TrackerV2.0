@@ -36,6 +36,7 @@ class Statistics extends \Core\Model
     protected $diffDate;
     protected $countDate;
     protected $datatable;
+    protected $row;
 
 
     public function __construct($company = 'empty', $login)
@@ -53,27 +54,35 @@ class Statistics extends \Core\Model
             $this->nameCompany = $company;
         }
 
+
+    }
+
+    private function row_Column()
+    {
+        $this->row = (int)$this->linkClient->query("Select count(*) From $this->nameCompany")->fetch(PDO::FETCH_ASSOC)["count(*)"];
     }
 
 
     public function diagramTraffic()
     {
 
+
         $desctop = (int)$this->linkClient->query("select sum(w) from
-    (SELECT count(platform) as w from Germany Where platform = 'Windows' $this->Where
+    (SELECT count(platform) as w from $this->nameCompany Where platform = 'Windows' $this->Where
     union
-    select count(platform)  as l from Germany Where platform = 'Linux' $this->Where
+    select count(platform)  as l from $this->nameCompany Where platform = 'Linux' $this->Where
     union
-    select count(platform)  as l from Germany Where platform = 'Macintosh' $this->Where) as v")->fetch(PDO::FETCH_ASSOC)["sum(w)"];
+    select count(platform)  as l from $this->nameCompany Where platform = 'Macintosh' $this->Where) as v")->fetch(PDO::FETCH_ASSOC)["sum(w)"];
 
         $mobile = (int)$this->linkClient->query("select sum(w) from
-      (SELECT count(platform) as w from Germany Where platform = 'Android' $this->Where
+      (SELECT count(platform) as w from $this->nameCompany Where platform = 'Android' $this->Where
         union
-        select count(platform)  as l from Germany Where platform = 'Iphone' $this->Where
+        select count(platform)  as l from $this->nameCompany  Where platform = 'Iphone' $this->Where
         ) as v")->fetch(PDO::FETCH_ASSOC)["sum(w)"];
 
         $this->res = array("mobile" => $mobile,
             "desctop" => $desctop);
+
     }
 
     public function time($start, $end)
@@ -82,7 +91,6 @@ class Statistics extends \Core\Model
         $this->endDate = $end;
 
         if (!empty($start) && !empty($end)) {
-
             $this->startDate = DateTime::createFromFormat('m.d.Y', $start)->format('Y-m-d');
 
             $this->endDate = DateTime::createFromFormat('m.d.Y', $end)->format('Y-m-d');
@@ -118,19 +126,32 @@ class Statistics extends \Core\Model
                 $date = $this->startDate->modify('+1 day')->format('Y-m-d');
             }
         } else {
+            $sqlDate = null;
+            $time = null;
+            if ($this->startDate->format("Y-m-d") == date("Y-m-d")) {
+                $sqlDate = 'CURRENT_DATE()';
+            } else {
+                $date = $this->startDate->format('Y-m-d');
+                $sqlDate = "Date('$date')";
+            }
 
-            $this->clickTarget[] = (int)$this->linkClient->query("select Count(*) from $this->nameCompany Where Date(date) = CURRENT_DATE() and ViewBlock = 'true'")->fetch(PDO::FETCH_ASSOC)["Count(*)"];
-            $this->clickBot[] = (int)$this->linkClient->query("select Count(*) from $this->nameCompany Where Date(date) = CURRENT_DATE() and ViewBlock = 'false'")->fetch(PDO::FETCH_ASSOC)["Count(*)"];
-            $date = $this->linkClient->query("select date from $this->nameCompany Where Date(date) = CURRENT_DATE() and ViewBlock = 'false'")->fetch(PDO::FETCH_ASSOC)["date"];
+            for ($i = 0; $i <= 23; $i++) {
+                $this->clickTarget[] = (int)$this->linkClient->query("select Count(*) from $this->nameCompany Where Date(date) = $sqlDate and ViewBlock = 'true' and Hour(time) = $i")->fetch(PDO::FETCH_ASSOC)["Count(*)"];
+                $this->clickBot[] = (int)$this->linkClient->query("select Count(*) from $this->nameCompany Where Date(date) = $sqlDate and ViewBlock = 'false' and Hour(time) = $i")->fetch(PDO::FETCH_ASSOC)["Count(*)"];
+                $time[] = $this->linkClient->query("select Hour(time) from $this->nameCompany Where Date(date) = $sqlDate  and ViewBlock = 'false' and Hour(time) = $i")->fetch(PDO::FETCH_ASSOC)["Hour(time)"];
 
-            $this->res = array("target" => $this->clickTarget, "bot" => $this->clickBot, "date" => $date);
+            }
+            $this->res = array("target" => $this->clickTarget, "bot" => $this->clickBot, "time" => $time);
+
+
         }
 
 
     }
 
 
-    private function getDataClient()
+    private
+    function getDataClient()
     {
 
         $this->setting = ($this->link->query("Select USER_ID,`dataBase`,user,password From LogAndPass Where log = '$this->login'"))->fetch();
@@ -154,7 +175,8 @@ class Statistics extends \Core\Model
     }
 
 
-    public function listCompany()
+    public
+    function listCompany()
     {
         $listCompany = $this->link->query("Select nameCompany From NameCompany Where USER_ID = (Select id From LogAndPass Where log = '$this->login')")->fetchAll(PDO::FETCH_ASSOC);
         return $listCompany;
@@ -168,18 +190,39 @@ class Statistics extends \Core\Model
 
     public function datatable()
     {
+        $this->row_Column();
 
-        $this->Where = $this->str_replace_once('and', 'Where', $this->Where);
-        $this->datatable = $this->linkClient->query("Select date,time,ViewBlock,ip,geoCity,geoContry,geoContinent,geoLocation,HTTP_ACCEPT_LANGUAGE,
-                                                               geoAsn,browser,platform,version,usageType,isp,reason,HTTP_ACCEPT_ENCODING,domain,generalAnswer 
+        if ($this->row >= 1) {
+            if ($this->login == 'dimaakimov528@gmail.com') {
+                $this->Where = $this->str_replace_once('and', 'Where', $this->Where);
+
+                $this->datatable = $this->linkClient->query("Select date,time,ViewBlock,ip,geoCity,geoContry,geoContinent,geoLocation,lng,
+                                                               geoAsn,browser,platform,version,usageType,isp,reason,zip,domain,generalAnswer 
                                                    from $this->nameCompany 
-                                                    $this->Where")->fetchAll(PDO::FETCH_ASSOC);
+                                                    $this->Where Order BY date,time desc")->fetchAll(PDO::FETCH_ASSOC);
 
-        $buffer = [];
-        foreach ($this->datatable as $value) {
-            $buffer[] = array_values($value);
+                $buffer = [];
+                foreach ($this->datatable as $value) {
+                    $buffer[] = array_values($value);
+                }
+                $this->res = array("data" => $buffer);
+            } else {
+                $this->Where = $this->str_replace_once('and', 'Where', $this->Where);
+
+                $this->datatable = $this->linkClient->query("Select date,time,ViewBlock,ip,geoCity,geoContry,geoContinent,geoLocation,lng,
+                                                               geoAsn,browser,platform,version,usageType,isp,domain 
+                                                   from $this->nameCompany 
+                                                    $this->Where Order BY date,time desc")->fetchAll(PDO::FETCH_ASSOC);
+
+                $buffer = [];
+                foreach ($this->datatable as $value) {
+                    $buffer[] = array_values($value);
+                }
+                $this->res = array("data" => $buffer);
+            }
+        } else {
+            $this->res = array("data" => "");
         }
-        $this->res = array("data" => $buffer);
 
     }
 
@@ -188,17 +231,17 @@ class Statistics extends \Core\Model
         $withhoutAnd = $this->str_replace_once('and', '', $this->Where);
 
         $this->res = $this->linkClient->query("
-        Select count(*) as general From Germany Where $withhoutAnd
+        Select count(*) as general From $this->nameCompany Where $withhoutAnd
             union all 
-        Select count(distinct ip) as general From Germany Where $withhoutAnd
+        Select count(distinct ip) as general From $this->nameCompany Where $withhoutAnd
             union all
-        Select count(*) as target  From Germany Where ViewBlock='true' $this->Where
+        Select count(*) as target  From $this->nameCompany Where ViewBlock='true' $this->Where
             union all
-        Select count(distinct ip) as block  From Germany Where ViewBlock='true' $this->Where
+        Select count(distinct ip) as block  From $this->nameCompany Where ViewBlock='true' $this->Where
             union all
-        Select count(*) as targetClick  From Germany Where ViewBlock='false' $this->Where
+        Select count(*) as targetClick  From $this->nameCompany Where ViewBlock='false' $this->Where
             union all
-        Select count(distinct ip) as blockClick  From Germany Where ViewBlock='false' $this->Where
+        Select count(distinct ip) as blockClick  From $this->nameCompany Where ViewBlock='false' $this->Where
         ")->fetchAll(PDO::FETCH_ASSOC);
 
     }

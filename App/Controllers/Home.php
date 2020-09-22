@@ -26,7 +26,10 @@ class Home extends \Core\Controller
 
             $this->model = (new ListCompany($_SESSION["user"]));
             $this->model->getListCompany();
-            View::renderTemplate('Home/index.html', ["posts" => $this->model->parseListCompany]);
+            $clients = $_SESSION['user'] == 'dimaakimov528@gmail.com'? true:false;
+            //$this->model->parseListCompany[] = array('clients' =>$clients);
+            $res = array("company" => $this->model->parseListCompany,"clients" =>$clients);
+            View::renderTemplate('Home/index.html', ["posts" => $res]);
         } else {
 
             // header("Location: /");

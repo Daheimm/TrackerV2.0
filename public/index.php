@@ -54,8 +54,6 @@ if (array_key_exists('user', $_SESSION)) {
     $router->add('/promo', ['controller' => 'promo', 'action' => 'index']);
     $router->add('{controller}/{action}');
 
-    $router->add('/editcompany', ['controller' => 'editcompany', 'action' => 'index']);
-    $router->add('{controller}/{action}');
 
     $router->add('/createCompany', ['controller' => 'createCompany', 'action' => 'index']);
     $router->add('{controller}/{action}');
@@ -84,8 +82,17 @@ if (array_key_exists('user', $_SESSION)) {
     $router->add('/statistics/targetandbot', ['controller' => 'statistics', 'action' => 'ClickTargetandBot']);
     $router->add('{controller}/{action}');
 
+    $router->add('/editCompany/sendDataEditCompany', ['controller' => 'Editcompany', 'action' => 'sendDataEditCompany']);
+    $router->add('{controller}/{action}');
 
+    $router->add('/editCompany/getDataEditCompany', ['controller' => 'Editcompany', 'action' => 'getDataSelectedClient']);
+    $router->add('{controller}/{action}');
 
+    $router->add('/editcompany', ['controller' => 'editcompany', 'action' => 'index']);
+    $router->add('{controller}/{action}');
+
+    $router->add('/activation', ['controller' => 'activationAccount', 'action' => 'activation']);
+    $router->add('{controller}/{action}');
 
 
 } else if ($_SERVER['QUERY_STRING'] == '/auth/check') {

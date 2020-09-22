@@ -38,30 +38,26 @@
                 <li class="nav-item mx-lg-h dropdown">
                     <a class="nav-link" href=".?/statistics">Statistics</a>
                 </li>
-                <li class="nav-item mx-lg-h active">
-                    <a class="nav-link" href=".?/profile">Edit profile</a>
-                </li>
+
                 <li class="nav-item mx-lg-h">
                     <a class="nav-link" href=".?/integration">Integration</a>
                 </li>
                 <li class="nav-item mx-lg-h">
                     <a class="nav-link" href=".?/blacklist">BlackList</a>
                 </li>
+                {% if posts.clients %}
                 <li class="nav-item mx-lg-h">
                     <a class="nav-link" href=".?/clients">Clients</a>
                 </li>
                 <li class="nav-item mx-lg-h">
                     <a class="nav-link" href=".?/promo">Promo</a>
                 </li>
+                {%endif%}
                 <li class="nav-item mx-lg-h">
                     <a class="nav-link text-danger nav-link--logout" href="?/logout"><i class="fas fa-sign-out-alt"></i></a>
                     <!-- <a class="nav-link text-danger" href="./login.html">Logout</a> -->
                 </li>
-                <li class="nav-item mx-lg-h">
-                    <a class="nav-link text-danger nav-link--logout" href="./login.html"><i
-                            class="fas fa-sign-out-alt"></i></a>
-                    <!-- <a class="nav-link text-danger" href="./login.html">Logout</a> -->
-                </li>
+
             </ul>
         </div>
     </nav>
@@ -75,19 +71,20 @@
                         <div class="main-box p-1 p-md-2 h-100">
                             <form class="">
 
+
                                 <div class="form-group">
                                     <label>Ссылка на целевую страницу (например, target-page.php, offer.com)</label>
-                                    <input type="text" class="form-control" name="" value="example.com.ua"/>
+                                    <input id="targetPage" type="text" class="form-control" name="" value="{{posts.pathTarget}}"/>
                                 </div>
 
                                 <div class="form-group">
                                     <label>Ссылка для ботов (index.php, mysite.com)</label>
-                                    <input type="text" class="form-control" name="" value="domain.com"/>
+                                    <input id="botPage" type="text" class="form-control" name="" value="{{posts.domain}}"/>
                                 </div>
 
                                 <div class="form-group">
                                     <label>Static Key</label>
-                                    <input type="text" class="form-control" name="" value="example-static-key"/>
+                                    <input id="staticKey" type="text" class="form-control" name="" value="{{posts.getKeys}}"/>
                                 </div>
 
                                 <div class="form-group">
@@ -104,7 +101,7 @@
                                     <label>Интеграция для Shopify и подобных систем</label>
                                     <div class="input-group">
                                         <input id="integrationLink" type="text" class="form-control disabled" name=""
-                                               value="https://analitics.fun/asdasdasdasdasd54645756jhgfszdczxvfgnghnd/m5rwed5YEW/oMQP4.js"/>
+                                               value="{{posts.path}}"/>
                                         <div class="input-group-append">
                                             <button class="btn btn-outline-secondary js-copy-by-id"
                                                     data-copy-elem-id="integrationLink" type="button" id=""><i
@@ -135,7 +132,17 @@
                                         </div>
                                     </div>
                                     <div id="selectedLng" class="form-group">
+                                        {% for posts in posts.lng%}
+                                        {% if posts is not empty %}
+                                        <div class="input-group removeLng">
 
+                                            <input type="text" class="form-control disabled readLng" name="" value="{{posts}}" disabled />
+                                            <div class="input-group-append">
+                                                <button type="submit" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                        {%endfor%}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -153,7 +160,17 @@
                                         </div>
                                     </div>
                                     <div id="selectedGeo" class="form-group">
+                                        {% for posts in posts.location%}
+                                        {% if posts is not empty %}
+                                        <div class="input-group removeGeo">
 
+                                            <input type="text" class="form-control disabled readLocation removeGeo" name="" value="{{posts}}" disabled />
+                                            <div class="input-group-append">
+                                                <button id="addGeoButton" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                        {%endfor%}
                                     </div>
                                 </div>
                             </div>
@@ -164,7 +181,7 @@
                 </div>
 
                 <div class="form-group mt-2 text-right">
-                    <button type="submit" class="btn btn-primary px-3">Save</button>
+                    <button id="save" class="btn btn-primary px-3">Save</button>
                 </div>
 
 

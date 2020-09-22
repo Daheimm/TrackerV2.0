@@ -20,7 +20,9 @@ class Statistics extends \Core\Controller
 
     public function indexAction()
     {
-        View::renderTemplate('Home/statistics.html');
+        $clients = $_SESSION['user'] == 'dimaakimov528@gmail.com'? true:false;
+
+        View::renderTemplate('Home/statistics.html',["posts" => $clients]);
     }
 
     public function listCompany()
@@ -46,12 +48,18 @@ class Statistics extends \Core\Controller
 
     public function datatable()
     {
-        $this->model->time($_POST["start"], $_POST["end"]);
+
+        $_GET["start"] = array_key_exists("start", $_GET) ? $_GET["start"] : "";
+        $_GET["end"] = array_key_exists("end", $_GET) ? $_GET["end"] : "";
+
+        $this->model->time($_GET["start"], $_GET["end"]);
         $this->model->datatable();
+
         echo json_encode($this->model->res);
     }
 
-    public  function ClickTargetandBot(){
+    public function ClickTargetandBot()
+    {
         $this->model->time($_POST["start"], $_POST["end"]);
         $this->model->ClickTargetandBot();
         echo json_encode($this->model->res);

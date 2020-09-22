@@ -24,18 +24,24 @@ class Registration extends \Core\Controller
 
                     $model = new MRegistration($_POST["email"], $_POST["password"], $_POST["promo"]);
 
-                    if ($model->isAnswer) header('Location: /');
+                    if ($model->isAnswer){
+                        echo '<script type="text/javascript">alert("Ваша запись активируется после проверки, в течение 1-3 часов."); document.location.href="?/registration";</script>';
+                    }
                     else {
-                        header('Location: ?/registration');
+                        echo '<script type="text/javascript">alert("'.$model->answer.'"); document.location.href="?/registration";</script>';
+
                     }
                 }else{
-                    header('Location: ?/registration');
+                    echo '<script type="text/javascript">alert("Не правильно введеный email!"); document.location.href="?/registration";</script>';
+
                 }
             } else {
 
-                header('Location: ?/registration');
+                echo '<script type="text/javascript">alert("Не все заполненны поля!"); document.location.href="?/registration";</script>';
+
             }
         }else{
+
             header('Location: ?/registration');
         }
     }

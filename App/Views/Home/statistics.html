@@ -29,33 +29,36 @@
                 <i class="fas fa-bars"></i>
             </button>
         </div>
+
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="c-header-nav navbar-nav ml-auto mt-1h mt-md-0 mr-md-2">
-                <li class="nav-item mx-lg-h active">
-                    <a class="nav-link" href="./index.html">Company</a>
+                <li class="nav-item mx-lg-h ">
+                    <a class="nav-link" href="/">Company</a>
                 </li>
                 <li class="nav-item mx-lg-h dropdown">
-                    <a class="nav-link" href="./statistics.html">Statistics</a>
+                    <a class="nav-link active" href=".?/statistics">Statistics</a>
+                </li>
+
+                <li class="nav-item mx-lg-h">
+                    <a class="nav-link" href=".?/integration">Integration</a>
                 </li>
                 <li class="nav-item mx-lg-h">
-                    <a class="nav-link" href="./edit-profile.html">Edit profile</a>
+                    <a class="nav-link" href=".?/blacklist">BlackList</a>
+                </li>
+
+                {% if posts %}
+                <li class="nav-item mx-lg-h">
+                    <a class="nav-link" href=".?/clients">Clients</a>
                 </li>
                 <li class="nav-item mx-lg-h">
-                    <a class="nav-link" href="./integration.html">Integration</a>
+                    <a class="nav-link" href=".?/promo">Promo</a>
                 </li>
+                {%endif%}
                 <li class="nav-item mx-lg-h">
-                    <a class="nav-link" href="./blacklist.html">BlackList</a>
-                </li>
-                <li class="nav-item mx-lg-h">
-                    <a class="nav-link" href="./clients.html">Clients</a>
-                </li>
-                <li class="nav-item mx-lg-h">
-                    <a class="nav-link" href="./promo.html">Promo</a>
-                </li>
-                <li class="nav-item mx-lg-h">
-                    <a class="nav-link text-danger nav-link--logout" href="./login.html"><i class="fas fa-sign-out-alt"></i></a>
+                    <a class="nav-link text-danger nav-link--logout" href="?/logout"><i class="fas fa-sign-out-alt"></i></a>
                     <!-- <a class="nav-link text-danger" href="./login.html">Logout</a> -->
                 </li>
+
             </ul>
         </div>
     </nav>
@@ -262,35 +265,16 @@
                                 <th class="th-sm">Version</th>
                                 <th class="th-sm">Usage Type</th>
                                 <th class="th-sm">Isp</th>
+                                {% if posts %}
                                 <th class="th-sm tb-td--reason">Reason</th>
                                 <th class="th-sm">Br</th>
                                 <th class="th-sm">Domain</th>
                                 <th class="th-sm">Answer</th>
+                                {% endif %}
                             </tr>
                             </thead>
                             <tbody>
 
-                            <tr class="">
-                                <td class="text-nowrap">2020-08-13</td>
-                                <td class="text-nowrap">01:17:43.159</td>
-                                <td class="text-center">false</td>
-                                <td>188.163.97.26</td>
-                                <td>Zaporizhia</td>
-                                <td>Ukraine</td>
-                                <td>Europe</td>
-                                <td>Europe/Zaporozhye</td>
-                                <td>ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7</td>
-                                <td>15895</td>
-                                <td>Chrome</td>
-                                <td>Android</td>
-                                <td>84.0.4147.89</td>
-                                <td>ISP/MOB</td>
-                                <td>Kyivstar PJSC</td>
-                                <td class="tb-td--reason">header not webp or apng, не выбран язык для фильтрации, ип в черном списке БД</td>
-                                <td>gzip, deflate, br</td>
-                                <td>kyivstar.ua</td>
-                                <td>{"isp":true,"targetCountry":true,"lng":true,"Platform":true,"Brotil":true,"browser":true,"Asn":true,"Packega":true,"VerifyUsers":true,"BlackList":false}</td>
-                            </tr>
                             </tbody>
                         </table>
                     </div>

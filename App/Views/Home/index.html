@@ -38,21 +38,22 @@
                 <li class="nav-item mx-lg-h dropdown">
                     <a class="nav-link" href=".?/statistics">Statistics</a>
                 </li>
-                <li class="nav-item mx-lg-h">
-                    <a class="nav-link" href=".?/profile">Edit profile</a>
-                </li>
+
                 <li class="nav-item mx-lg-h">
                     <a class="nav-link" href=".?/integration">Integration</a>
                 </li>
                 <li class="nav-item mx-lg-h">
                     <a class="nav-link" href=".?/blacklist">BlackList</a>
                 </li>
+
+                {% if posts.clients %}
                 <li class="nav-item mx-lg-h">
                     <a class="nav-link" href=".?/clients">Clients</a>
                 </li>
                 <li class="nav-item mx-lg-h">
                     <a class="nav-link" href=".?/promo">Promo</a>
                 </li>
+                {%endif%}
                 <li class="nav-item mx-lg-h">
                     <a class="nav-link text-danger nav-link--logout" href="?/logout"><i class="fas fa-sign-out-alt"></i></a>
                     <!-- <a class="nav-link text-danger" href="./login.html">Logout</a> -->
@@ -111,7 +112,7 @@
                             </thead>
                             <tbody>
 
-                            {% for posts in posts|reverse%}
+                            {% for posts in posts.company|reverse%}
                             <tr>
                                 <td scope="row" id="company">{{posts.nameCompany}}</td>
                                 <td>{{posts.pathTarget}}</td>
@@ -120,14 +121,16 @@
                                 <td class="text-center">{{posts.target}}</td>
                                 <td class="text-center">{{posts.bot}}</td>
                                 <td class="text-right text-nowrap">
-                                    <a href=".?/statistics" type="button"
+                                    <a href=".?/statistics&company={{posts.nameCompany}}" type="button"
                                        class="btn btn-primary btn-sm btn--action mr-q" alt=""><i
                                             class="fas fa-chart-line"></i> <span class="d-none d-lg-inline-block">Statistic</span></a>
-                                    <a onclick="dwn('{{posts.nameCompany}}')" data-item="{{posts.nameCompany}}"  class="btn btn-info btn-sm btn--action mr-q" alt=""
+                                    <a onclick="dwn('{{posts.nameCompany}}')" data-item="{{posts.nameCompany}}"
+                                       class="btn btn-info btn-sm btn--action mr-q" alt=""
                                        target="_blank"><i
                                             class="fas fa-download"></i> <span
                                             class="d-none d-lg-inline-block">Download</span></a>
-                                    <a href=".?/editcompany" class="btn btn-warning btn-sm btn--action mr-q" alt=""><i
+                                    <a href=".?/editcompany&company={{posts.nameCompany}}"
+                                       class="btn btn-warning btn-sm btn--action mr-q" alt=""><i
                                             class="fas fa-edit"></i> <span class="d-none d-lg-inline-block">Edit</span></a>
                                     <button type="button" class="btn btn-danger btn-sm btn--action mr-q"
                                             data-toggle="modal" data-target="#modalDelete"><i

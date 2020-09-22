@@ -31,35 +31,32 @@
     </div>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="c-header-nav navbar-nav ml-auto mt-1h mt-md-0 mr-md-2">
-        <li class="nav-item mx-lg-h active">
+        <li class="nav-item mx-lg-h ">
           <a class="nav-link" href="/">Company</a>
         </li>
         <li class="nav-item mx-lg-h dropdown">
           <a class="nav-link" href=".?/statistics">Statistics</a>
         </li>
-        <li class="nav-item mx-lg-h">
-          <a class="nav-link" href=".?/profile">Edit profile</a>
-        </li>
-        <li class="nav-item mx-lg-h">
+
+        <li class="nav-item mx-lg-h active">
           <a class="nav-link" href=".?/integration">Integration</a>
         </li>
         <li class="nav-item mx-lg-h">
           <a class="nav-link" href=".?/blacklist">BlackList</a>
         </li>
+        {% if posts %}
         <li class="nav-item mx-lg-h">
           <a class="nav-link" href=".?/clients">Clients</a>
         </li>
         <li class="nav-item mx-lg-h">
           <a class="nav-link" href=".?/promo">Promo</a>
         </li>
+        {%endif%}
         <li class="nav-item mx-lg-h">
           <a class="nav-link text-danger nav-link--logout" href="?/logout"><i class="fas fa-sign-out-alt"></i></a>
           <!-- <a class="nav-link text-danger" href="./login.html">Logout</a> -->
         </li>
-        <li class="nav-item mx-lg-h">
-          <a class="nav-link text-danger nav-link--logout" href="./login.html"><i class="fas fa-sign-out-alt"></i></a>
-          <!-- <a class="nav-link text-danger" href="./login.html">Logout</a> -->
-        </li>
+
       </ul>
     </div>
   </nav>

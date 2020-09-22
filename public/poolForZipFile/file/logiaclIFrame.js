@@ -5,7 +5,7 @@ $handler = new Handler();
 
 if ($handler->getData() == 'true') {
 
-    $content = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "pathFile");
+    $content = file_get_contents("pathFile");
     echo str_replace("site", $handler->path, $content);
 } else
     echo 'console.log("ничего нету")';

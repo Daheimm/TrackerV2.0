@@ -1,7 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:trackerV2.0" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0ad2701-6cd0-43d6-b49e-e27595a63d32" name="Default Changelist" comment="" />
+    <list default="true" id="a0ad2701-6cd0-43d6-b49e-e27595a63d32" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/Blacklist.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/Blacklist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/Clients.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/Clients.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/CreateCompany.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/CreateCompany.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/Editcompany.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/Editcompany.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/Integration.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/Integration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/Registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/Statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/Statistics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/CreateCompany.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/CreateCompany.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/Statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Statistics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/Home/blacklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/blacklist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/Home/clients.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/clients.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/Home/company-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/company-edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/Home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/Home/integration.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/integration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/Home/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/Home/promo.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/promo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/Home/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/registration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/Home/statistics.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/statistics.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/edit-profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/edit-profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/statistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/statistics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/poolForZipFile/file/OnlyHeaderWithFingerprint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/poolForZipFile/file/facebook.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/poolForZipFile/file/fingerpringOnlyJSPOST.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/poolForZipFile/file/header.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/poolForZipFile/file/logiaclIFrame.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/poolForZipFile/file/logiaclIFrame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/poolForZipFile/file/sourceCode/dowloandAD.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/poolForZipFile/file/sourceCode/dowloandFB.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/poolForZipFile/file/sourceCode/dowloandFBGetJS.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/poolForZipFile/file/sourceCode/facebook.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/poolForZipFile/file/sourceCode/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/poolForZipFile/file/sourceCode/linkJS.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +77,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
@@ -34,6 +95,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1ggqs3W9dPUHX4XRnncpkb3jsm9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,7 +111,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="database.data.extractors.current.export.id" value="Excel (xlsx)" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/project/html" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -90,12 +152,30 @@
       <workItem from="1599664340973" duration="306000" />
       <workItem from="1599703857091" duration="4105000" />
       <workItem from="1599802743294" duration="26272000" />
-      <workItem from="1599912729181" duration="6241000" />
+      <workItem from="1599912729181" duration="9117000" />
+      <workItem from="1600091716867" duration="1548000" />
+      <workItem from="1600169778366" duration="12785000" />
+      <workItem from="1600263005544" duration="8983000" />
+      <workItem from="1600358741096" duration="5273000" />
+      <workItem from="1600521126839" duration="1333000" />
+      <workItem from="1600582396209" duration="16096000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="575" y="215" width="800" height="684" key="#Deployment" timestamp="1599041244508">
@@ -106,10 +186,10 @@
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
     <state x="554" y="205" width="832" height="711" key="#SSH_Configurations/40.27.1880.1053@40.27.1880.1053" timestamp="1598595979774" />
-    <state x="575" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599537645709">
+    <state x="575" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600276747811">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state x="575" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/40.27.1880.1053@40.27.1880.1053" timestamp="1599537645709" />
+    <state x="575" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/40.27.1880.1053@40.27.1880.1053" timestamp="1600276747811" />
     <state x="713" y="339" width="524" height="441" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper" timestamp="1599642571865">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
@@ -118,10 +198,10 @@
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
     <state x="713" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/40.27.1880.1053@40.27.1880.1053" timestamp="1599303883514" />
-    <state x="763" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1599806712737">
+    <state x="763" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1600178258094">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state x="763" y="311" width="424" height="491" key="FileChooserDialogImpl/40.27.1880.1053@40.27.1880.1053" timestamp="1599806712737" />
+    <state x="763" y="311" width="424" height="491" key="FileChooserDialogImpl/40.27.1880.1053@40.27.1880.1053" timestamp="1600178258093" />
     <state width="621" height="396" key="GridCell.Tab.0.bottom" timestamp="1599297303667">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
@@ -138,10 +218,10 @@
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
     <state width="621" height="396" key="GridCell.Tab.0.right/40.27.1880.1053@40.27.1880.1053" timestamp="1599297303667" />
-    <state x="682" y="273" width="585" height="596" key="NewPhpClassDialog" timestamp="1599477692607">
+    <state x="682" y="273" width="585" height="603" key="NewPhpClassDialog" timestamp="1600265779258">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state x="682" y="273" width="585" height="596" key="NewPhpClassDialog/40.27.1880.1053@40.27.1880.1053" timestamp="1599477692607" />
+    <state x="682" y="273" width="585" height="603" key="NewPhpClassDialog/40.27.1880.1053@40.27.1880.1053" timestamp="1600265779258" />
     <state x="469" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1599830762046">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
@@ -150,6 +230,10 @@
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
     <state x="819" y="453" width="321" height="207" key="WebDeployment.AddServerDialog.v.1/40.27.1880.1053@40.27.1880.1053" timestamp="1598595926707" />
+    <state x="881" y="431" width="187" height="251" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1600276683370">
+      <screen x="40" y="27" width="1880" height="1053" />
+    </state>
+    <state x="881" y="431" width="187" height="251" key="com.intellij.database.actions.DdlActions$CreateObject$1/40.27.1880.1053@40.27.1880.1053" timestamp="1600276683370" />
     <state x="831" y="294" width="679" height="525" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1598890710105">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
@@ -158,17 +242,28 @@
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
     <state x="541" y="141" width="1453" height="706" key="dock-window-1/40.27.1880.1053@40.27.1880.1053" timestamp="1598887584083" />
-    <state x="828" y="316" width="608" height="522" key="find.popup" timestamp="1599478234201">
+    <state x="828" y="316" width="608" height="522" key="find.popup" timestamp="1600600043792">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state x="828" y="316" width="608" height="522" key="find.popup/40.27.1880.1053@40.27.1880.1053" timestamp="1599478234201" />
-    <state x="644" y="252" key="run.anything.popup" timestamp="1599918320595">
+    <state x="828" y="316" width="608" height="522" key="find.popup/40.27.1880.1053@40.27.1880.1053" timestamp="1600600043792" />
+    <state x="644" y="252" key="run.anything.popup" timestamp="1600603038051">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state x="644" y="252" key="run.anything.popup/40.27.1880.1053@40.27.1880.1053" timestamp="1599918320595" />
-    <state x="643" y="259" key="search.everywhere.popup" timestamp="1599830513773">
+    <state x="644" y="252" key="run.anything.popup/40.27.1880.1053@40.27.1880.1053" timestamp="1600603038051" />
+    <state x="643" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1600278468839">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state x="643" y="259" key="search.everywhere.popup/40.27.1880.1053@40.27.1880.1053" timestamp="1599830513773" />
+    <state x="643" y="259" width="672" height="678" key="search.everywhere.popup/40.27.1880.1053@40.27.1880.1053" timestamp="1600278468839" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/App/Models/editCompany.php</url>
+          <line>57</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

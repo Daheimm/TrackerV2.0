@@ -43,13 +43,15 @@ class Registration extends \Core\Model
                 $idPromo = (int)$res["id"];
 
                 $date = date("Y-m-d H:i:s") . substr((string)microtime(), 1, 4);
-                //var_dump("Insert Into LogAndPass(USER_ID,log,pas,idPacket,company,click,dates,activation,idPromo) Values ('$this->idNewUsers','$this->login','$this->password',1,0,0,'$date',0,$idPromo)");
+
                 $this->db->query("Insert Into LogAndPass(USER_ID,log,pas,idPacket,company,click,dates,activation,idPromo) Values ('$this->idNewUsers','$this->login','$this->password',1,0,0,'$date',0,$idPromo)");
                 $this->isAnswer = true;
-            }else{
+            } else {
+                $this->answer = "Такой пользователь уже зарегестрирован!!!";
                 $this->isAnswer = false;
             }
         } else {
+            $this->answer = "Укажите действующий промо код!";
             $this->isAnswer = false;
         }
     }

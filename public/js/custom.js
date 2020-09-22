@@ -30,11 +30,12 @@ $(document).ready(function () {
 
 
     $('#applyStatistisc').click(function () {
+        var company = $('#companyName').find(":selected").text();
 
-        diagramTraffic();
-        listTraffic();
-        datatabel();
-        ClickTargetandBot();
+        diagramTraffic(company);
+        listTraffic(company);
+        datatabel(company);
+        ClickTargetandBot(company);
     })
 
     function browser(msg) {
@@ -146,26 +147,24 @@ $(document).ready(function () {
         }
     }
 
-    function datatabel() {
+    function datatabel(company) {
 
         dataTable = $('#js-statistic-t').DataTable({
             "ajax": {
                 "url": "?/statistics/datatable",
-                "type": "POST",
+                "type": "GET",
                 "data": function (d) {
-                    console.log(d);
                     d.end = $('#end').val();
                     d.start = $('#start').val();
-                    d.company = $('#companyName').find(":selected").text();
-
+                    d.company = company
                 },
             },
             ordering: false,
             scrollX: true,
             destroy: true,
             aaData: response.data,
-            success: function (msg){
-                console.log(msg);
+            success: function (msg) {
+
             }
         });
     }
@@ -175,27 +174,39 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "/?/statistics/listcompany",
-            success: function (msg) {
+            success: async function (msg) {
 
-                $.each(msg, function (key, value) {
-                    $('#companyName').append('<option value="' + value.nameCompany + '">' + value.nameCompany + '</option>');
+                $.each(msg, await function (key, value) {
+
+                      $('#companyName').append('<option value="' + value.nameCompany + '">' + value.nameCompany + '</option>');
                 });
-                diagramTraffic();
-                listTraffic();
-                datatabel();
-                ClickTargetandBot();
+
+                var url = new URL(document.location.href);
+                var company = url.searchParams.get("company");
+
+                if (company == null) company = $('#companyName').find(":selected").text()
+
+                $('#companyName').find(":selected").text(company);
+
+                diagramTraffic(company);
+                listTraffic(company);
+                datatabel(company);
+                ClickTargetandBot(company);
+
             }, error: function (xhr, ajaxOptions, thrownError) {
                 console.log(xhr.responseText);
             },
             dataType: 'JSON',
         });
-        $(window).on("load", function () {
-
-
-        });
     }
 
-    function diagramTraffic() {
+    $(window).on("load", function () {
+
+
+    });
+
+
+    function diagramTraffic(company) {
         $.ajax({
             type: "POST",
             url: "/?/statistics/diagramTraffic",
@@ -205,7 +216,7 @@ $(document).ready(function () {
             }, data: {
                 "end": $('#end').val(),
                 "start": $('#start').val(),
-                "company": $('#companyName').find(":selected").text()
+                "company": company
             }, error: function (xhr, ajaxOptions, thrownError) {
                 console.log(xhr.responseText);
                 console.log(thrownError);
@@ -214,12 +225,12 @@ $(document).ready(function () {
         });
     }
 
-    function ClickTargetandBot() {
+    function ClickTargetandBot(company) {
         $.ajax({
             type: "POST",
             url: "/?/statistics/targetandbot",
             success: function (msg) {
-                console.log(msg);
+
                 $("#click span").text(msg[0].general);
                 $("#clickUser span").text(msg[1].general);
                 $("#targetClick span").text(msg[2].general);
@@ -230,7 +241,7 @@ $(document).ready(function () {
             }, data: {
                 "end": $('#end').val(),
                 "start": $('#start').val(),
-                "company": $('#companyName').find(":selected").text()
+                "company": company
             }, error: function (xhr, ajaxOptions, thrownError) {
                 console.log(xhr.responseText);
                 console.log(thrownError);
@@ -239,38 +250,53 @@ $(document).ready(function () {
         });
     }
 
-    function listTraffic() {
+    function listTraffic(company) {
         $.ajax({
             type: "POST",
             url: "/?/statistics/listTraffic",
             success: function (msg) {
-
-                var days = ['Mon',
-                    'Tue',
-                    'Wed',
-                    'Thu',
-                    'Fri',
-                    'Sat',
-                    'Sun'];
+                console.log(msg);
+                var days = [
+                    'Воскресенье',
+                    'Понедельник',
+                    'Вторник',
+                    'Среда',
+                    'Четверг',
+                    'Пятница',
+                    'Суббота'
+                ];
 
                 var date = [];
-                if (Array.isArray(msg.date)) {
 
-                    for (var i = 0; i <= msg.date.length; i++) {
-                        date.push(days[new Date(msg.date[i]).getDay()])
+                if (typeof msg.date == "object") {
+
+                    if (Array.isArray(msg.date)) {
+
+                        for (var i = 0; i <= msg.date.length; i++) {
+
+
+                            if (msg.date[i] == null) {
+                                msg.target.splice(i, 1);
+                                msg.bot.splice(i, 1);
+                            } else {
+                                var d = new Date(msg.date[i]);
+                                var index = d.getDay();
+                                date.push(days[index]);
+                            }
+                        }
+                        traffic(msg);
+
                     }
-
-                } else {
-                    date = days[new Date(msg.date).getDay()]
+                } else if (typeof msg.time === "object") {
+                    msg.date = msg.time;
+                    traffic(msg);
                 }
-                msg.date = date;
-                traffic(msg);
 
 
             }, data: {
                 "end": $('#end').val(),
                 "start": $('#start').val(),
-                "company": $('#companyName').find(":selected").text()
+                "company": company
             }, error: function (xhr, ajaxOptions, thrownError) {
                 console.log(xhr.responseText);
                 console.log(thrownError);
