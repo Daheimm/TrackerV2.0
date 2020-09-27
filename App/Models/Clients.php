@@ -24,8 +24,9 @@ class Clients extends \Core\Model
 
     public function GetAllAlogin()
     {
-        $this->res = $this->link->query("Select * From LogAndPass")->fetchAll(PDO::FETCH_ASSOC);
 
+        $this->res = $this->link->query("Select log,pas, p.name,dates,IdPromo,countDay,click,company,payDate,activation
+                                        From LogAndPass l inner JOIN Paket p on l.IdPacket = p.id ")->fetchAll(PDO::FETCH_ASSOC);
     }
 
 

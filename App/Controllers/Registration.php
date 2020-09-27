@@ -25,7 +25,7 @@ class Registration extends \Core\Controller
                     $model = new MRegistration($_POST["email"], $_POST["password"], $_POST["promo"]);
 
                     if ($model->isAnswer){
-                        echo '<script type="text/javascript">alert("Ваша запись активируется после проверки, в течение 1-3 часов."); document.location.href="?/registration";</script>';
+                        echo '<script type="text/javascript">alert("Ваша запись активируется  после проверки в течение 1-8 часов."); document.location.href="?/registration";</script>';
                     }
                     else {
                         echo '<script type="text/javascript">alert("'.$model->answer.'"); document.location.href="?/registration";</script>';

@@ -2,6 +2,7 @@
 
 
 namespace App\Models;
+
 use PDO;
 use App\ConfigClient;
 
@@ -14,6 +15,7 @@ class ActivationAccount extends \Core\Model
     protected $user;
     protected $configClient;
     protected $customerId;
+    public $msg;
 
 
     public function __construct($login)
@@ -88,6 +90,13 @@ class ActivationAccount extends \Core\Model
     private function makeRequest($sql)
     {
         return $this->link->query($sql);
+    }
+
+    public function activationPay()
+    {
+        $today = date("y-m-d");
+        $this->link->query("Update LogAndPass set dates = '$today' Where log = '$this->login'");
+        $this->msg = "Активированно после оплаты";
     }
 
 }

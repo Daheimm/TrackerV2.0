@@ -332,7 +332,7 @@ $(document).ready(function () {
 function copyValById(elemId) {
     var copyText = document.getElementById(elemId);
     copyText.select();
-    document.execCommand("copy");
+
 
     console.log("Copied the text: " + copyText.value);
 }

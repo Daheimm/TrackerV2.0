@@ -63,7 +63,7 @@ class ListCompany extends \Core\Model
             $this->target = $this->dbClient->query("Select Count(*) from $company where ViewBlock = 'true' and DATE(date) = CURRENT_DATE()")->fetch(PDO::ATTR_AUTOCOMMIT)["Count(*)"];
             $this->bot = $this->dbClient->query("Select Count(*) from $company where ViewBlock = 'false' and DATE(date) = CURRENT_DATE()")->fetch(PDO::FETCH_ASSOC)["Count(*)"];
             $this->path = $this->dbClient->query("Select Count(*) from $company where ViewBlock = 'false' and DATE(date) = CURRENT_DATE()")->fetch(PDO::FETCH_ASSOC)["Count(*)"];
-            $this->path = $this->dbClient->query("Select pathBlack,pathTarget from Setting where nameCompany = '$company'")->fetch(PDO::ATTR_AUTOCOMMIT);
+            $this->path = $this->dbClient->query("Select domain,pathTarget from Setting where nameCompany = '$company'")->fetch(PDO::ATTR_AUTOCOMMIT);
 
 
             $targetCountry = $this->dbClient->query("Select targetCountry From Setting Where nameCompany = '$company'")->fetch()["targetCountry"];
@@ -75,7 +75,7 @@ class ListCompany extends \Core\Model
                 "targetCountry" => $targetCountry,
                 "target" => $this->target,
                 "bot" => $this->bot,
-                "pathBlack" => $this->path["pathBlack"],
+                "pathBlack" => $this->path["domain"],
                 "pathTarget" => $this->path["pathTarget"]);
        }
     }

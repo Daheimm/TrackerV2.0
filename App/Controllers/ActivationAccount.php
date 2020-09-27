@@ -18,4 +18,10 @@ class ActivationAccount extends \Core\Controller
     {
         $this->modelActivationAccount->bootstrap();
     }
+
+    public function activationPay()
+    {
+        $this->modelActivationAccount->activationPay();
+        echo $this->modelActivationAccount->msg;
+    }
 }

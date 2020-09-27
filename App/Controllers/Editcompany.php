@@ -31,14 +31,15 @@ class Editcompany extends \Core\Controller
         $this->modelEditCompany->getSelectedClient();
         $buffer = $this->modelEditCompany->res;
         $this->modelEditCompany->getPath();
-        $path = "https://analitics.fun/" . $this->modelEditCompany->path;
+        $path = "<script src='https://analitics.fun/" . $this->modelEditCompany->path . "</script>";
         $buffer["language"] = explode(',', $buffer["language"]);
         $buffer["targetCountry"] = array_key_exists("targetCountry", $buffer) ? $buffer["targetCountry"] = explode(',', $buffer["targetCountry"]) : "not";
         $buffer["pathTarget"] = array_key_exists("pathTarget", $buffer) ? $buffer["pathTarget"] : "not";
         $buffer["domain"] = array_key_exists("domain", $buffer) ? $buffer["domain"] : "not";
         $buffer["getKeys"] = array_key_exists("getKeys", $buffer) ? $buffer["getKeys"] : "not";
 
-        $clients = $_SESSION['user'] == 'dimaakimov528@gmail.com'? true:false;
+        $clients[] = $_SESSION['user'] == 'dimaakimov528@gmail.com' ? true : false;
+
 
         $res = array('lng' => $buffer["language"],
             'location' => $buffer["targetCountry"],
@@ -46,7 +47,7 @@ class Editcompany extends \Core\Controller
             "pathTarget" => $buffer["pathTarget"],
             "domain" => $buffer["domain"],
             "getKeys" => $buffer["getKeys"],
-            "clients" =>$clients);
+            "clients" => $clients);
 
         View::renderTemplate('Home/company-edit.html', ["posts" => $res]);
     }
@@ -64,6 +65,6 @@ class Editcompany extends \Core\Controller
         $this->modelEditCompany->getPath();
         $path = $this->modelEditCompany->path;
         $res = array('lng' => $buffer["language"], 'location' => $buffer["targetCountry"], "path" => $path);
-        // echo json_encode($res);
+
     }
 }

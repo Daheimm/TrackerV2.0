@@ -20,8 +20,7 @@ class Statistics extends \Core\Controller
 
     public function indexAction()
     {
-        $clients = $_SESSION['user'] == 'dimaakimov528@gmail.com'? true:false;
-
+        $clients[] = $_SESSION['user'] == 'dimaakimov528@gmail.com'? array("clients" => true):array("clients" => false);
         View::renderTemplate('Home/statistics.html',["posts" => $clients]);
     }
 

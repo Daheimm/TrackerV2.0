@@ -199,7 +199,7 @@ class Statistics extends \Core\Model
                 $this->datatable = $this->linkClient->query("Select date,time,ViewBlock,ip,geoCity,geoContry,geoContinent,geoLocation,lng,
                                                                geoAsn,browser,platform,version,usageType,isp,reason,zip,domain,generalAnswer 
                                                    from $this->nameCompany 
-                                                    $this->Where Order BY date,time desc")->fetchAll(PDO::FETCH_ASSOC);
+                                                    $this->Where Order BY date desc,time desc")->fetchAll(PDO::FETCH_ASSOC);
 
                 $buffer = [];
                 foreach ($this->datatable as $value) {
@@ -212,7 +212,7 @@ class Statistics extends \Core\Model
                 $this->datatable = $this->linkClient->query("Select date,time,ViewBlock,ip,geoCity,geoContry,geoContinent,geoLocation,lng,
                                                                geoAsn,browser,platform,version,usageType,isp,domain 
                                                    from $this->nameCompany 
-                                                    $this->Where Order BY date,time desc")->fetchAll(PDO::FETCH_ASSOC);
+                                                    $this->Where Order BY date desc,time desc")->fetchAll(PDO::FETCH_ASSOC);
 
                 $buffer = [];
                 foreach ($this->datatable as $value) {

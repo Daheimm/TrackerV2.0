@@ -42,6 +42,12 @@ if (array_key_exists('user', $_SESSION)) {
     $router->add('/profile', ['controller' => 'profile', 'action' => 'index']);
     $router->add('{controller}/{action}');
 
+    $router->add('/profilClient', ['controller' => 'clientProfil', 'action' => 'index']);
+    $router->add('{controller}/{action}');
+
+    $router->add('/writeBlackIp', ['controller' => 'blacklist', 'action' => 'handlerBlackIp']);
+    $router->add('{controller}/{action}');
+
     $router->add('/integration', ['controller' => 'integration', 'action' => 'index']);
     $router->add('{controller}/{action}');
 
@@ -92,6 +98,30 @@ if (array_key_exists('user', $_SESSION)) {
     $router->add('{controller}/{action}');
 
     $router->add('/activation', ['controller' => 'activationAccount', 'action' => 'activation']);
+    $router->add('{controller}/{action}');
+
+    $router->add('/activationAccount/pay', ['controller' => 'activationAccount', 'action' => 'activationPay']);
+    $router->add('{controller}/{action}');
+
+    $router->add('/logs', ['controller' => 'logs', 'action' => 'index']);
+    $router->add('{controller}/{action}');
+
+    $router->add('/getAllUsers', ['controller' => 'logs', 'action' => 'getAllLogins']);
+    $router->add('{controller}/{action}');
+
+    $router->add('/getAllCompany', ['controller' => 'logs', 'action' => 'getAllCompany']);
+    $router->add('{controller}/{action}');
+
+    $router->add('/logs/getAllDataFromClient', ['controller' => 'logs', 'action' => 'getAllDataFromClient']);
+    $router->add('{controller}/{action}');
+
+    $router->add('/logs/headerTable', ['controller' => 'logs', 'action' => 'headerTable']);
+    $router->add('{controller}/{action}');
+
+    $router->add('/tariff', ['controller' => 'Tariff', 'action' => 'index']);
+    $router->add('{controller}/{action}');
+
+    $router->add('/tariff/pay', ['controller' => 'Tariff', 'action' => 'paySave']);
     $router->add('{controller}/{action}');
 
 

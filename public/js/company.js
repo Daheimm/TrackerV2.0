@@ -37,6 +37,15 @@ $(document).ready(function () {
         });
     };
 
+    $("#createCompany").submit(function () {
+        if ($('#companyName').val().match(/^[A-Za-z]+$/) == null){
+            alert("Именование компаний только латинские буквы");
+            return false; //для наглядности
+        }else{
+            return true;
+        }
+    });
+
 
 
 });

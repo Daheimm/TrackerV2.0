@@ -48,13 +48,18 @@
                     <a class="nav-link active" href=".?/clients">Clients</a>
                 </li>
                 <li class="nav-item mx-lg-h">
+                    <a class="nav-link" href=".?/tariff">Tariff</a>
+                </li>
+                <li class="nav-item mx-lg-h">
+                    <a class="nav-link" href=".?/logs">Logs</a>
+                </li>
+                <li class="nav-item mx-lg-h">
                     <a class="nav-link" href=".?/promo">Promo</a>
                 </li>
                 <li class="nav-item mx-lg-h">
                     <a class="nav-link text-danger nav-link--logout" href="?/logout"><i class="fas fa-sign-out-alt"></i></a>
                     <!-- <a class="nav-link text-danger" href="./login.html">Logout</a> -->
                 </li>
-
             </ul>
         </div>
     </nav>
@@ -75,6 +80,7 @@
                             <th class="th-sm">Date of registration</th>
                             <th class="th-sm">days passed</th>
                             <th class="th-sm">Activation</th>
+                            <th class="th-sm">PayDate</th>
 
                         </tr>
                         </thead>
@@ -84,13 +90,14 @@
                         <tr class="">
                             <td class="text-nowrap">{{posts.log}}</td>
                             <td class="text-nowrap">{{posts.pas}}</td>
-                            <td class="text-center">{{posts.IdPacket}}</td>
+                            <td class="text-center">{{posts.name}}</td>
                             <td>{{posts.IdPromo}}</td>
                             <td>{{posts.company}}</td>
                             <td>{{posts.click}}</td>
                             <td>{{posts.dates}}</td>
                             <td>{{posts.countDay}}</td>
                             <td>{{posts.activation}}</td>
+                            <td>{{posts.payDate}}</td>
                         </tr>
                         {%endfor%}
                         </tbody>

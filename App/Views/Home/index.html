@@ -45,10 +45,18 @@
                 <li class="nav-item mx-lg-h">
                     <a class="nav-link" href=".?/blacklist">BlackList</a>
                 </li>
-
+                <li class="nav-item mx-lg-h">
+                    <a class="nav-link" href=".?/profilClient">Profil</a>
+                </li>
+                <li class="nav-item mx-lg-h">
+                    <a class="nav-link" href=".?/tariff">Tariff</a>
+                </li>
                 {% if posts.clients %}
                 <li class="nav-item mx-lg-h">
                     <a class="nav-link" href=".?/clients">Clients</a>
+                </li>
+                <li class="nav-item mx-lg-h">
+                    <a class="nav-link" href=".?/logs">Logs</a>
                 </li>
                 <li class="nav-item mx-lg-h">
                     <a class="nav-link" href=".?/promo">Promo</a>
@@ -65,7 +73,7 @@
         <div>
             <div class="container c-container mb-2 mb-4">
 
-                <form action="?/createCompany" method="post" class="">
+                <form action="?/createCompany" method="post" id="createCompany" class="">
                     <div class="row justify-content-center">
                         <div class="col-md-7 col-lg-7 form-group mb-md-0">
                             <label class="text-dark font-weight-bold" for="companyName" class="">Company name</label>
@@ -173,7 +181,7 @@
 <script src="./js/datatables.min.js"></script>
 <script src="./js/select2.min.js"></script>
 <script src="./js/bootstrap-datepicker.min.js"></script>
-<script src="./js/custom.js"></script>
+
 <script src="./js/company.js"></script>
 
 

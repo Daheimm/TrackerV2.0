@@ -9,8 +9,8 @@ use App\ConfigClient;
 
 define("_StackPathForChange_", "/poolForZipFile/stack/");
 define("_domain_", "https://analitics.fun/");
-define("_pathToFileForChangeContent_", $_SERVER['DOCUMENT_ROOT']);
-define("_ForDowloand_", $_SERVER["DOCUMENT_ROOT"] . "/poolJS/");
+define("_pathToFileForChangeContent_", "/var/www/html/");
+define("_ForDowloand_", "/var/www/html/poolJS/");
 
 class Dowloand extends \Core\Model
 {
@@ -76,7 +76,7 @@ class Dowloand extends \Core\Model
 
     public function getData()
     {
-        return _StackPathForChange_ . $this->identifier . "/" . $this->path . "/" . $this->path . ".zip";
+        return _domain_ . "poolJS/". $this->identifier . "/" . $this->path . "/" . $this->path . ".zip";
     }
 
 
@@ -108,7 +108,7 @@ class Dowloand extends \Core\Model
 
     private function zipFiletoArchive()
     {
-        if ($this->zip->open($_SERVER["DOCUMENT_ROOT"] . _StackPathForChange_ . $this->identifier . "/" . $this->path . "/" . $this->path . ".zip", ZipArchive::OVERWRITE | ZipArchive::CREATE)) {
+        if ($this->zip->open(_ForDowloand_ . $this->identifier . "/" . $this->path . "/" . $this->path . ".zip", ZipArchive::OVERWRITE | ZipArchive::CREATE)) {
             {
                 $this->zip->addFile(_ForDowloand_ . "$this->identifier" . "/" . $this->path . "/" . $this->fileFB, "Facebook/" . "/" . $this->fileFB);
                 $this->zip->addFile(_ForDowloand_ . "$this->identifier" . "/" . $this->path . "/" . $this->fileAD, "Adwords/" . $this->fileAD);

@@ -5,7 +5,7 @@ $(document).ready(function () {
         company = await table.row(this).data();
 
 
-        if(table.row(this).data()[8] == 0) {
+        if (table.row(this).data()[8] == 0) {
             $.ajax({
                 type: "POST",
                 url: "?/activation",
@@ -22,8 +22,27 @@ $(document).ready(function () {
                 }
 
             });
-        }else{
-            alert("Уже активирован");
+        } else {
+            var isAdmin = confirm("Активировать учетную запись после оплыта = " + table.row(this).data()[0]);
+
+            if (isAdmin) {
+                $.ajax({
+                    type: "POST",
+                    url: "?/activationAccount/pay",
+                    data: {
+                        "login": table.row(this).data()[0]
+                    },
+
+                    success: function (msg) {
+                        alert(msg);
+
+
+                    }, error: function (xhr, ajaxOptions, thrownError) {
+                        console.log(xhr.responseText);
+                    }
+
+                });
+            }
         }
     });
 
