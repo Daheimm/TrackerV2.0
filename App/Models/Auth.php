@@ -35,14 +35,17 @@ class Auth extends \Core\Model
         $res = ($this->db->query("SELECT log FROM LogAndPass WHERE log = '$this->login'"))->fetch(PDO::FETCH_ASSOC);
 
         if ($res != null) {
-            $res = ($this->db->query("SELECT count(*) FROM LogAndPass WHERE log = '$this->login' AND pas = '$this->pass'"))->fetch(PDO::FETCH_ASSOC);
 
+            $objectDB = $this->db->prepare("SELECT count(*) FROM LogAndPass WHERE log = :log AND pas = :pas");
+            $objectDB->execute(["log" => $this->login, "pas" => $this->pass]);
+            $res = $objectDB->fetch(PDO::FETCH_ASSOC)["count(*)"];
             if ((int)$res == 1) {
 
-                $activation = $this->db->query("Select activation From LogAndPass Where log = '$this->login' AND pas = '$this->pass'")->fetch(PDO::FETCH_ASSOC);
-
+                $objectDB = $this->db->prepare("SELECT activation FROM LogAndPass WHERE log = :log AND pas = :pas");
+                $objectDB->execute(["log" => $this->login, "pas" => $this->pass]);
+                $activation = $objectDB->fetch(PDO::FETCH_ASSOC)["activation"];
                 if ((int)$res == 1) {
-                    if ((int)$activation["activation"] == 1) $this->isAnswer = true;
+                    if ((int)$activation == 1) $this->isAnswer = true;
                     else {
                         $this->answer = "Your Account has not yet been activated";
                         $this->isAnswer = false;

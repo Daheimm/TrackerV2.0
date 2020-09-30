@@ -51,7 +51,7 @@
                 <li class="nav-item mx-lg-h">
                     <a class="nav-link" href=".?/tariff">Tariff</a>
                 </li>
-                {% if posts %}
+                {% if posts.clients %}
                 <li class="nav-item mx-lg-h">
                     <a class="nav-link" href=".?/clients">Clients</a>
                 </li>
@@ -277,6 +277,7 @@
                                 <th class="th-sm">Domain</th>
                                 <th class="th-sm">Answer</th>
                                 {% endif %}
+                                <th class="th-sm">key</th>
                             </tr>
                             </thead>
                             <tbody>

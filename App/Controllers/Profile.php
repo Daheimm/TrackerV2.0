@@ -11,8 +11,8 @@ class Profile extends  \Core\Controller
     public function indexAction()
     {
 
-
-        View::renderTemplate('Home/profile.html');
+        $clients = $_SESSION['user'] == 'dimaakimov528@gmail.com' ? true:false;
+        View::renderTemplate('Home/profile.html', ["clients" => $clients]);
 
     }
 }

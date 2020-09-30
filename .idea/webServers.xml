@@ -3,7 +3,14 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="4a9025e8-d1ed-44aa-a26f-dd45fd8d0ced" name="front">
-        <fileTransfer rootFolder="/var/www/palladium/" accessType="SFTP" host="185.25.118.31" port="22" sshConfigId="5c19bf9e-e7ab-4225-9b46-297191cd2c90" sshConfig="root@185.25.118.31:22 password">
+        <fileTransfer rootFolder="/var/www/palladium/" accessType="SFTP" host="185.2.83.47" port="22" sshConfigId="5c19bf9e-e7ab-4225-9b46-297191cd2c90" sshConfig="root@185.2.83.47:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="234d16f1-0907-43aa-9223-c36353b04341" name="frontNewServer">
+        <fileTransfer rootFolder="/var/www/palladium" accessType="SFTP" host="185.2.83.47" port="22" sshConfigId="5c19bf9e-e7ab-4225-9b46-297191cd2c90" sshConfig="root@185.2.83.47:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

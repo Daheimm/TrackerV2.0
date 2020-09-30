@@ -42,7 +42,9 @@ class ActivationAccount extends \Core\Model
         $this->makeRequest("grant all privileges on $this->nameDataBase.* to digital@'%'");
         $this->makeRequest("grant all privileges on $this->nameDataBase.* to " . $this->user . "@localhost");
 
+        $this->makeRequest("Update LogAndPass set IdPacket = 9 Where log = '$this->login'");
         $this->connectCLient();
+
         $this->link = static::getDBClient($this->configClient);
 
 
@@ -52,11 +54,14 @@ class ActivationAccount extends \Core\Model
                                                     nameCompany text,
                                                     pathTarget text,
                                                     domain text,
-                                                    getKeys text);");
+                                                    getKeys text,
+                                                    pathBlack text);");
 
         $this->makeRequest("INsert Into Setting(targetCountry,language) values('empty','empty')");
 
         $this->makeRequest("CREATE Table BlackList(id int AUTO_INCREMENT PRIMARY key NOT null,ip text, description text)");
+
+
     }
 
     private function connectCLient()
@@ -95,7 +100,7 @@ class ActivationAccount extends \Core\Model
     public function activationPay()
     {
         $today = date("y-m-d");
-        $this->link->query("Update LogAndPass set dates = '$today' Where log = '$this->login'");
+        $this->link->query("Update LogAndPass set dates = '$today',activation = 1,IsPay = 1 Where log = '$this->login'");
         $this->msg = "Активированно после оплаты";
     }
 

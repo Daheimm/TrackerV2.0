@@ -21,7 +21,7 @@ class Statistics extends \Core\Controller
     public function indexAction()
     {
         $clients[] = $_SESSION['user'] == 'dimaakimov528@gmail.com'? array("clients" => true):array("clients" => false);
-        View::renderTemplate('Home/statistics.html',["posts" => $clients]);
+        View::renderTemplate('Home/statistics.html',["posts" => $clients[0]]);
     }
 
     public function listCompany()

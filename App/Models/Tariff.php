@@ -23,6 +23,6 @@ class Tariff extends \Core\Model
         $nameTariff = $this->db->query("Select name From Paket Where id = $this->tariff")->fetch(PDO::FETCH_ASSOC)["name"];
 
         $today = date("y-m-d");
-        $this->db->query("Update LogAndPass set pay = '$nameTariff',payDate = '$today',IdPacket = $this->tariff Where log = '$this->login'");
+        $this->db->query("Update LogAndPass set pay = '$nameTariff',payDate = '$today',IdPacket = $this->tariff,IsPay = false Where log = '$this->login'");
     }
 }

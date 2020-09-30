@@ -16,7 +16,7 @@ class BlackList extends \Core\Model
     protected $blackIP = [];
     protected $login;
 
-    public function __construct($ip,$login)
+    public function __construct($ip, $login)
     {
         $this->db = static::getDB();
         $this->login = $login;
@@ -30,12 +30,18 @@ class BlackList extends \Core\Model
     private function writeLocalDBIP()
     {
 
-        foreach ($this->blackIP as $ip) {
-            $res = (int)$this->dbClient->query("Select count(*) From BlackList Where ip = '$ip'")->fetch(PDO::FETCH_ASSOC)["count(*)"];
+        try {
+            foreach ($this->blackIP as $ip) {
+                $res = (int)$this->dbClient->query("Select count(*) From BlackList Where ip = '$ip'")->fetch(PDO::FETCH_ASSOC)["count(*)"];
 
-            if ($res == 0)
-                $this->dbClient->query("Insert Into BlackList(ip) values('$ip')");
+                if ($res == 0)
+                    $this->dbClient->query("Insert Into BlackList(ip) values('$ip')");
+            }
+            $this->successful = true;
+        } catch (Exception $e) {
+            $this->successful = false;
         }
+
     }
 
     private function getDataClient()

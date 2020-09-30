@@ -31,7 +31,7 @@ class Editcompany extends \Core\Controller
         $this->modelEditCompany->getSelectedClient();
         $buffer = $this->modelEditCompany->res;
         $this->modelEditCompany->getPath();
-        $path = "<script src='https://analitics.fun/" . $this->modelEditCompany->path . "</script>";
+        $path = "<script src='https://palladium-dashboard.online/" . $this->modelEditCompany->path . "></script>";
         $buffer["language"] = explode(',', $buffer["language"]);
         $buffer["targetCountry"] = array_key_exists("targetCountry", $buffer) ? $buffer["targetCountry"] = explode(',', $buffer["targetCountry"]) : "not";
         $buffer["pathTarget"] = array_key_exists("pathTarget", $buffer) ? $buffer["pathTarget"] : "not";

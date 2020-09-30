@@ -20,41 +20,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0ad2701-6cd0-43d6-b49e-e27595a63d32" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/App/Controllers/ClientProfil.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Controllers/Logs.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Controllers/Tariff.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Models/ClientProfil.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Models/Logs.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/App/Models/Tariff.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/blacklist.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/logs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/tariff.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/66ff68fc-efce-45db-aeb5-13293159225e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/66ff68fc-efce-45db-aeb5-13293159225e.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/7d12c3ff-cd82-4ea1-8e17-7d244587c58c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7d12c3ff-cd82-4ea1-8e17-7d244587c58c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/7d5f1f07-e756-49f9-b58d-bfaf6513a946.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7d5f1f07-e756-49f9-b58d-bfaf6513a946.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/ActivationAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/ActivationAccount.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Controllers/Blacklist.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/Blacklist.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Controllers/Editcompany.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/Editcompany.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/Home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/Integration.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/Integration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Controllers/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/Registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Controllers/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/Profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Controllers/Statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Controllers/Statistics.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Models/ActivationAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/ActivationAccount.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Models/BlacksList.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/BlackList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/BlackList.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/BlackList.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Models/Clients.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Clients.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/CreateCompany.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/CreateCompany.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Models/Dowloand.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Dowloand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Models/ListCompany.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/ListCompany.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/Home/blacklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/blacklist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/Statistics.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Statistics.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Models/Tariff.php" beforeDir="false" afterPath="$PROJECT_DIR$/App/Models/Tariff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App/Views/Home/client-profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/client-profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Views/Home/clients.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/clients.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/Home/company-edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/company-edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/Home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App/Views/Home/integration.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/integration.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App/Views/Home/statistics.html" beforeDir="false" afterPath="$PROJECT_DIR$/App/Views/Home/statistics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/clients.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/clients.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/company.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/company.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/custom.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/blacklist.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/blacklist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/poolForZipFile/file/adwords.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/poolForZipFile/file/adwords.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/poolForZipFile/file/dowloandAD.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/poolForZipFile/file/dowloandAD.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/poolForZipFile/file/dowloandFB.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/poolForZipFile/file/dowloandFB.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +100,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="database.data.extractors.current.export.id" value="Excel (xlsx)" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/App/Views/Home" />
+    <property name="last_opened_file_path" value="$USER_HOME$/project/html" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -161,7 +154,10 @@
       <workItem from="1600770357998" duration="3397000" />
       <workItem from="1601029771900" duration="1101000" />
       <workItem from="1601115459800" duration="13836000" />
-      <workItem from="1601197052261" duration="17394000" />
+      <workItem from="1601197052261" duration="20895000" />
+      <workItem from="1601302979371" duration="4416000" />
+      <workItem from="1601362777495" duration="6134000" />
+      <workItem from="1601443756592" duration="7705000" />
     </task>
     <servers />
   </component>
@@ -181,18 +177,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="575" y="215" width="800" height="684" key="#Deployment" timestamp="1601117008189">
+    <state x="575" y="215" width="800" height="684" key="#Deployment" timestamp="1601303165554">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state x="575" y="215" width="800" height="684" key="#Deployment/40.27.1880.1053@40.27.1880.1053" timestamp="1601117008189" />
-    <state x="554" y="205" width="832" height="711" key="#SSH_Configurations" timestamp="1601117007272">
+    <state x="575" y="215" width="800" height="684" key="#Deployment/40.27.1880.1053@40.27.1880.1053" timestamp="1601303165554" />
+    <state x="554" y="205" width="832" height="711" key="#SSH_Configurations" timestamp="1601303115331">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state x="554" y="205" width="832" height="711" key="#SSH_Configurations/40.27.1880.1053@40.27.1880.1053" timestamp="1601117007272" />
-    <state x="575" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600276747811">
+    <state x="554" y="205" width="832" height="711" key="#SSH_Configurations/40.27.1880.1053@40.27.1880.1053" timestamp="1601303115331" />
+    <state x="361" y="255" width="1285" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601380929734">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state x="575" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/40.27.1880.1053@40.27.1880.1053" timestamp="1600276747811" />
+    <state x="361" y="255" width="1285" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/40.27.1880.1053@40.27.1880.1053" timestamp="1601380929734" />
     <state x="713" y="339" width="524" height="441" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper" timestamp="1599642571865">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
@@ -201,34 +197,34 @@
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
     <state x="713" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/40.27.1880.1053@40.27.1880.1053" timestamp="1601212274495" />
-    <state x="763" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1600178258094">
+    <state x="763" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1601303206837">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state x="763" y="311" width="424" height="491" key="FileChooserDialogImpl/40.27.1880.1053@40.27.1880.1053" timestamp="1600178258093" />
-    <state width="1263" height="436" key="GridCell.Tab.0.bottom" timestamp="1601216604148">
+    <state x="763" y="311" width="424" height="491" key="FileChooserDialogImpl/40.27.1880.1053@40.27.1880.1053" timestamp="1601303206837" />
+    <state width="621" height="436" key="GridCell.Tab.0.bottom" timestamp="1601451184923">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state width="1263" height="436" key="GridCell.Tab.0.bottom/40.27.1880.1053@40.27.1880.1053" timestamp="1601216604147" />
-    <state width="1263" height="436" key="GridCell.Tab.0.center" timestamp="1601216604146">
+    <state width="621" height="436" key="GridCell.Tab.0.bottom/40.27.1880.1053@40.27.1880.1053" timestamp="1601451184923" />
+    <state width="621" height="436" key="GridCell.Tab.0.center" timestamp="1601451184921">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state width="1263" height="436" key="GridCell.Tab.0.center/40.27.1880.1053@40.27.1880.1053" timestamp="1601216604146" />
-    <state width="1263" height="436" key="GridCell.Tab.0.left" timestamp="1601216604145">
+    <state width="621" height="436" key="GridCell.Tab.0.center/40.27.1880.1053@40.27.1880.1053" timestamp="1601451184921" />
+    <state width="621" height="436" key="GridCell.Tab.0.left" timestamp="1601451184921">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state width="1263" height="436" key="GridCell.Tab.0.left/40.27.1880.1053@40.27.1880.1053" timestamp="1601216604145" />
-    <state width="1263" height="436" key="GridCell.Tab.0.right" timestamp="1601216604147">
+    <state width="621" height="436" key="GridCell.Tab.0.left/40.27.1880.1053@40.27.1880.1053" timestamp="1601451184921" />
+    <state width="621" height="436" key="GridCell.Tab.0.right" timestamp="1601451184922">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state width="1263" height="436" key="GridCell.Tab.0.right/40.27.1880.1053@40.27.1880.1053" timestamp="1601216604147" />
+    <state width="621" height="436" key="GridCell.Tab.0.right/40.27.1880.1053@40.27.1880.1053" timestamp="1601451184922" />
     <state x="682" y="273" width="585" height="610" key="NewPhpClassDialog" timestamp="1601212092012">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
     <state x="682" y="273" width="585" height="610" key="NewPhpClassDialog/40.27.1880.1053@40.27.1880.1053" timestamp="1601212092012" />
-    <state x="469" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1601206868197">
+    <state x="469" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1601381693231">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state x="469" y="188" width="1022" height="737" key="SettingsEditor/40.27.1880.1053@40.27.1880.1053" timestamp="1601206868197" />
+    <state x="469" y="188" width="1022" height="737" key="SettingsEditor/40.27.1880.1053@40.27.1880.1053" timestamp="1601381693231" />
     <state x="819" y="453" width="321" height="207" key="WebDeployment.AddServerDialog.v.1" timestamp="1598595926707">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
@@ -237,30 +233,34 @@
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
     <state x="881" y="431" width="187" height="251" key="com.intellij.database.actions.DdlActions$CreateObject$1/40.27.1880.1053@40.27.1880.1053" timestamp="1600276683370" />
-    <state x="733" y="371" width="484" height="372" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1601213678755">
+    <state x="845" y="27" width="367" height="1053" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1601389202446">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state x="733" y="371" width="484" height="372" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/40.27.1880.1053@40.27.1880.1053" timestamp="1601213678755" />
-    <state x="831" y="294" width="679" height="525" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1601213732057">
+    <state x="845" y="27" width="367" height="1053" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/40.27.1880.1053@40.27.1880.1053" timestamp="1601389202446" />
+    <state x="733" y="371" width="484" height="372" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1601445511901">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state x="831" y="294" width="679" height="525" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/40.27.1880.1053@40.27.1880.1053" timestamp="1601213732057" />
+    <state x="733" y="371" width="484" height="372" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/40.27.1880.1053@40.27.1880.1053" timestamp="1601445511901" />
+    <state x="831" y="294" width="679" height="525" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1601445528875">
+      <screen x="40" y="27" width="1880" height="1053" />
+    </state>
+    <state x="831" y="294" width="679" height="525" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/40.27.1880.1053@40.27.1880.1053" timestamp="1601445528875" />
     <state x="541" y="141" width="1453" height="706" key="dock-window-1" timestamp="1598887584083">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
     <state x="541" y="141" width="1453" height="706" key="dock-window-1/40.27.1880.1053@40.27.1880.1053" timestamp="1598887584083" />
-    <state x="828" y="316" width="608" height="522" key="find.popup" timestamp="1600600043792">
+    <state x="828" y="316" width="608" height="522" key="find.popup" timestamp="1601217219754">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state x="828" y="316" width="608" height="522" key="find.popup/40.27.1880.1053@40.27.1880.1053" timestamp="1600600043792" />
+    <state x="828" y="316" width="608" height="522" key="find.popup/40.27.1880.1053@40.27.1880.1053" timestamp="1601217219754" />
     <state x="845" y="447" width="260" height="226" key="publish.login" timestamp="1601117012878">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
     <state x="845" y="447" width="260" height="226" key="publish.login/40.27.1880.1053@40.27.1880.1053" timestamp="1601117012878" />
-    <state x="644" y="252" key="run.anything.popup" timestamp="1601211522893">
+    <state x="644" y="252" key="run.anything.popup" timestamp="1601380312690">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>
-    <state x="644" y="252" key="run.anything.popup/40.27.1880.1053@40.27.1880.1053" timestamp="1601211522893" />
+    <state x="644" y="252" key="run.anything.popup/40.27.1880.1053@40.27.1880.1053" timestamp="1601380312690" />
     <state x="643" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1600770678207">
       <screen x="40" y="27" width="1880" height="1053" />
     </state>

@@ -184,6 +184,7 @@ class CreateCompany extends \Core\Model
     private function makeRequest($sql, $client)
     {
         if ($client) {
+            var_dump($sql);
             $this->dbClient->query($sql);
         } else {
 
@@ -197,7 +198,7 @@ class CreateCompany extends \Core\Model
         $this->sqlClient = "CREATE Table " . $this->nameCompany . "(id int AUTO_INCREMENT PRIMARY key NOT null,date date,time time,timeJS time,login varchar(200),company varchar(200),ip varchar(120),geoCity varchar(120),
 			geoContry varchar(120),geoAsn text,geoContinent varchar(120),geoLocation varchar(120),geoAutonomSystem varchar(120),browser varchar(120),version varchar(120),platform varchar(120),reason text,
 			usageType varchar(120),isp varchar(120),domain varchar(120),ViewBlock text,generalAnswer text,fingerprint text,timezone text,hasLiedLanguages text,hasLiedOs text,
-			hasLiedBrowser text, lng varchar(200), referer text,user_agent text,zip varchar(120));";
+			hasLiedBrowser text, lng varchar(200), referer text,user_agent text,zip varchar(120),getKeys text );";
         $this->sqlCore .= "Insert Into NameCompany (nameCompany,USER_ID,identifier,path,nameJSCompany,onlyHeaderJS,fileFB,fileAD) values('$this->nameCompany',$this->user_id,'$this->identifier','$this->path','$this->nameJSCompany','$this->onlyHeaderJS','$this->facebook','$this->adwords');";
         $this->sqlCoreUpdate = "Update LogAndPass set company = '$this->countCompany' Where log = '$this->login';";
     }

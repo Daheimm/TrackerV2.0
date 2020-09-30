@@ -8,7 +8,7 @@ use ZipArchive;
 use App\ConfigClient;
 
 define("_StackPathForChange_", "/poolForZipFile/stack/");
-define("_domain_", "https://analitics.fun/");
+define("_domain_", "https://palladium-dashboard.online/");
 define("_pathToFileForChangeContent_", "/var/www/html/");
 define("_ForDowloand_", "/var/www/html/poolJS/");
 
@@ -110,9 +110,9 @@ class Dowloand extends \Core\Model
     {
         if ($this->zip->open(_ForDowloand_ . $this->identifier . "/" . $this->path . "/" . $this->path . ".zip", ZipArchive::OVERWRITE | ZipArchive::CREATE)) {
             {
-                $this->zip->addFile(_ForDowloand_ . "$this->identifier" . "/" . $this->path . "/" . $this->fileFB, "Facebook/" . "/" . $this->fileFB);
+                $this->zip->addFile(_ForDowloand_ . "$this->identifier" . "/" . $this->path . "/" . $this->fileFB, "Facebook/" . $this->fileFB);
                 $this->zip->addFile(_ForDowloand_ . "$this->identifier" . "/" . $this->path . "/" . $this->fileAD, "Adwords/" . $this->fileAD);
-                $this->zip->addFile(_ForDowloand_ . "$this->identifier" . "/" . $this->path . "/" . "pathJS.txt", "linkJS/" . "pathJS.txt");
+               // $this->zip->addFile(_ForDowloand_ . "$this->identifier" . "/" . $this->path . "/" . "pathJS.txt", "linkJS/" . "pathJS.txt");
                 $this->zip->close();
             }
         }

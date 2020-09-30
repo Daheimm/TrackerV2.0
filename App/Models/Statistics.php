@@ -210,7 +210,7 @@ class Statistics extends \Core\Model
                 $this->Where = $this->str_replace_once('and', 'Where', $this->Where);
 
                 $this->datatable = $this->linkClient->query("Select date,time,ViewBlock,ip,geoCity,geoContry,geoContinent,geoLocation,lng,
-                                                               geoAsn,browser,platform,version,usageType,isp,domain 
+                                                               geoAsn,browser,platform,version,usageType,isp,domain,getKeys
                                                    from $this->nameCompany 
                                                     $this->Where Order BY date desc,time desc")->fetchAll(PDO::FETCH_ASSOC);
 

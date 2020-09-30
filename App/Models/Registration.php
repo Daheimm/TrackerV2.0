@@ -44,7 +44,15 @@ class Registration extends \Core\Model
 
                 $date = date("Y-m-d H:i:s") . substr((string)microtime(), 1, 4);
 
-                $this->db->query("Insert Into LogAndPass(USER_ID,log,pas,idPacket,company,click,dates,activation,idPromo) Values ('$this->idNewUsers','$this->login','$this->password',1,0,0,'$date',0,$idPromo)");
+                // $this->db->query("Insert Into LogAndPass(USER_ID,log,pas,idPacket,company,click,dates,activation,idPromo)
+                //  Values ('$this->idNewUsers','$this->login','$this->password',1,0,0,'$date',0,$idPromo)");
+
+                $objectDB = $this->db->prepare("Insert Into LogAndPass(USER_ID,log,pas,idPacket,company,click,dates,activation,idPromo) 
+                                            Values (:iduser,:login,:pas,1,0,0,:dates,0,:promo)");
+
+                $objectDB->execute(["iduser" => $this->idNewUsers, "login" => $this->login, "pas" => $this->password, "dates" => $date, "promo" => $idPromo]);
+
+
                 $this->isAnswer = true;
             } else {
                 $this->answer = "Такой пользователь уже зарегестрирован!!!";
